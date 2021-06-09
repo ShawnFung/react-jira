@@ -1,6 +1,9 @@
-const isFasly = (value) => value === 0? false: !value;
+const isFasly = (value:any) => value === 0? false: !value;
 
-export const cleanObject = (value) => {
+interface Map {
+  [key: string]: any
+}
+export const cleanObject = (value: Map) => {
   let result = {...value}
   Object.keys(value).forEach(key => {
     if(isFasly(value[key])){

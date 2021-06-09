@@ -1,6 +1,21 @@
-import { useState, useEffect, memo } from 'react'
+import React, { useState, useEffect, memo } from 'react'
 
-export const SearchPanel = memo((props) => {
+export interface User{
+  id: number;
+  name: string
+}
+interface SearchPanelProps {
+  param: {
+    name: string,
+    personId: string
+  };
+  setParam: (param: {
+    name: string,
+    personId: string
+  }) => void;
+  users: User[]
+}
+export const SearchPanel = memo((props: SearchPanelProps) => {
 
   console.log('SearchPanel render')
   const { param, setParam, users } = props;

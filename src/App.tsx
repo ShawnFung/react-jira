@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { ProjectListScreen } from './pages/project-list'
+import { Login } from './pages/login/index'
 
 function App() {
   return (
     <div className="App">
-      <ProjectListScreen />
+      <Login />
     </div>
   );
 }

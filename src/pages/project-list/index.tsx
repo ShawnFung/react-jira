@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { SearchPanel } from './search-panel'
 import { List } from './list'
 import qs from 'qs'
-import { cleanObject } from "../../utils";
+import { cleanObject } from "../../utils/index";
 
 const apiUrl = process.env.REACT_APP_API_URL
 
