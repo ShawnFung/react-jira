@@ -3,10 +3,13 @@ import { SearchPanel } from './search-panel'
 import { List } from './list'
 import qs from 'qs'
 import { cleanObject } from "../../utils/index";
+import { useAuth } from "../../context/auth-context";
 
 const apiUrl = process.env.REACT_APP_API_URL
 
 export const ProjectListScreen = () => {
+
+  const { logout } = useAuth()
 
   console.log('ProjectListScreen render')
   const [users, setUsers] = useState([])
@@ -35,6 +38,7 @@ export const ProjectListScreen = () => {
 
   return (
     <div>
+      <button onClick={logout}>退出登录</button>
       <SearchPanel param={param} setParam={setParam} users={users}></SearchPanel>
       <List users={users} list={list}></List>
     </div>
