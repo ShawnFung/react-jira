@@ -8,6 +8,8 @@ export interface AuthForm {
   password: string
 }
 
+export const getToken = () => window.localStorage.getItem(tokenKey)
+
 export const handleUserResponse = (user: User) => {
   window.localStorage.setItem(tokenKey, user.token)
   return user
