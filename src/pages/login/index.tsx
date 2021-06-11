@@ -15,6 +15,7 @@ export const Login = () => {
   }
 
   return <Container>
+    <Header />
     <Background />
     <ShadowCard>
       <Title>{"请登录"}</Title>
@@ -37,6 +38,13 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+`
+
+const Header = styled.div`
+  background: url(${logo}) no-repeat center;
+  padding: 5rem 0;
+  background-size: 8rem;
+  width: 100%;
 `
 
 const ShadowCard = styled(Card)`
