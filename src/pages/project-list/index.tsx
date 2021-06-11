@@ -4,6 +4,7 @@ import { List } from './list'
 import { cleanObject } from "../../utils/index";
 import { useAuth } from "../../context/auth-context";
 import { useHttp } from "../../utils/http";
+import { Button } from 'antd'
 
 const apiUrl = process.env.REACT_APP_API_URL
 
@@ -35,7 +36,7 @@ export const ProjectListScreen = () => {
 
   return (
     <div>
-      <button onClick={logout}>退出登录</button>
+      <Button onClick={logout}>退出登录</Button>
       <SearchPanel param={param} setParam={setParam} users={users}></SearchPanel>
       <List users={users} list={list}></List>
     </div>

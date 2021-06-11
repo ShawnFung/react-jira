@@ -1,4 +1,5 @@
 import React, { useState, useEffect, memo } from 'react'
+import { Form, Input, Select } from "antd";
 
 export interface User{
   id: number
@@ -21,17 +22,19 @@ export const SearchPanel = memo((props: SearchPanelProps) => {
   console.log('SearchPanel render')
   const { param, setParam, users } = props;
 
-  return <form>
-    <div>
-      <input type="text" value={param.name} onChange={evt => setParam({ ...param, name: evt.target.value})} />
-      <select value={param.personId} onChange={evt => setParam({ ...param, personId: evt.target.value})}>
-        <option value="">负责人</option>
+  return <Form layout={'inline'}>
+    <Form.Item>
+      <Input type="text" value={param.name} onChange={evt => setParam({ ...param, name: evt.target.value})} />
+    </Form.Item>
+    <Form.Item>
+      <Select value={param.personId} onChange={value => setParam({ ...param, personId: value})}>
+        <Select.Option value="">负责人</Select.Option>
         {
           users.map(item => {
-            return <option key={item.id} value={item.id}>{item.name}</option>
+            return <Select.Option key={item.id} value={item.id}>{item.name}</Select.Option>
           })
         }
-      </select>
-    </div>
-  </form>
+      </Select>
+    </Form.Item>
+  </Form>
 })
